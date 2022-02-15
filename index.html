@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Jura&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Lesson_7</title>
+</head>
+<body>
+    <header class="header">
+        <h1>СSS свойство Background. Фон для сайта</h1>
+    </header>
+    <main class="content">
+        <div class="wrapper">
+            <p>
+                С помощью свойства background можно установить цвет, положение, изображение, привязку и повторяемость бекграунда как для отдельного элемента, так и для всего сайта. Последнее, по сути, является заданиям настроек для тэга body. Рассмотрим все свойства, связанные с фоном (background). Если вы только учитесь, то самым лучшим вариантом усвоения урока будет практическое применение свойства в таком же порядке, как я рассматриваю ниже: 
+            </p>
+            <h3>Background-color</h3>
+            <p>
+                Задает цвет фона. Можно применять к отдельным элементам h1, p или ко всему сайту через через тэг body:
+            </p>
+            <div class="background">
+                <p>
+                    /* черный фон сайта */<br>
+                    body {<br>
+                    background-color: #000;<br>
+                    }
+                </p>
+                <br>
+                <p>
+                    /* черный фон заголовка, белый цвет шрифта */<br>
+                    h1 {<br>
+                    color: #fff;<br> 
+                    background-color: #000;<br>
+                    }
+                </p>
+            </div>
+            <div class="example1"></div>
+            <div class="example1">h1</div>
+            <h3>Background-image</h3>
+            <p>
+                Используется для вставки фонового изображения, при этом в css указываем ссылку на картинку:
+            </p>
+            <div class="background">
+                <p>
+                    body {<br>
+                        background-color: #000;<br>
+                        background-image: url ("my-image.jpg");<br>
+                       }
+                </p>
+            </div>
+            <p>
+                Обратите внимание как указан путь к изображению — это означает, что оно должно находится в той же самой папке, что и css файл стилей. В противном случае следует указывать полный путь к изображению. Опция пригодится если вы захотите, например, добавить кликабельный фон на сайте.
+            </p>
+            <div class="example2"></div>
+            <a href=""><div class="example2-click"></div></a>
+            <h3>Background-size</h3>
+            <p>
+                Определяет размер фонового изображения.
+            </p>
+            <div class="background">
+                <p>
+                    div {<br>
+                        background: url(my-image.jpg);<br>
+                        background-size: 100% 100%;<br>
+                        background-repeat: no-repeat;<br>
+                    }
+                </p>
+            </div>
+            <p>
+                Для свойства есть несколько интересных особенностей. Кроме числовых значений размеров (px,pt) можно использовать процентные или автоматическое вычисление (auto — например для одной из стороны картинки — 500px auto). Данное свойство применяется для создания фона для сайта с картинкой на весь экран.
+            </p>
+            <p>
+                Если указать значение cover, то фон будет масштабироваться дабы ширина и высота картинки = ширине и высоте блока. Если использовать значение contain, то масштабирование будет с сохранением пропорций чтобы изображение полностью поместилось в блок.
+            </p>
+            <div class="example3"></div>
+            <div class="example3"></div>
+            <h3>Background-repeat</h3>
+            <p>
+                Используемое в предыдущем примере изображение будет «растиражировано» (повторяется) по всему экрану. Данное свойство призвано управлять этим процессом. Имеется несколько допустимых значений:
+            </p>
+            <ul>
+                <li>background-repeat: repeat-x — изображение повторяется только по горизонтали</li>
+                <li>background-repeat: repeat-y — изображение повторяется только по вертикали</li>
+                <li>background-repeat: repeat — изображение повторяется по горизонтали и вертикали</li>
+                <li>background-repeat: no-repeat — изображение не повторяется</li>
+            </ul>
+            <div class="example4-repeat-x"></div>
+            <div class="example4-repeat-y"></div>
+            <div class="example4-repeat"></div>
+            <div class="example4-no-repeat"></div>
+            <p>
+                <strong>background-attachment</strong> — данное свойство определяет будет ли фоновое изображение фиксироваться при прокрутке страницы:
+            </p>
+            <ul>
+                <li>background-attachment: scroll — прокручивается вместе со страницей</li>
+                <li>background-attachment: fixed — при прокрутке фон остается неподвижным</li>
+            </ul>
+            <h3>Background-position</h3>
+            <p>
+                Задает расположения рисунка относительно экрана, по умолчанию оно выводится в левом верхнем углу. Значение этого свойства представляет собой набор координат Х (по горизонтали) и Y (по вертикали), которые начинаються с левого верхнего угла. Может задаваться:
+            </p>
+            <ul>
+                <li>в фиксированных единицах (пикселы, сантиметры)</li>
+                <li>в процентах</li>
+                <li>словесно: — top (сверху), bottom (снизу), center (по центру), left (слева) и right (справа).</li>
+            </ul>
+            <p>
+                Рассмотрим примеры:
+            </p>
+            <ul>
+                <li>background-position: 20px 50px — изображение отступает вниз на 20 пикселей сверху и вправо на 50 от левого края.</li>
+                <li>background-position: 50% 25% — расположено по центру по горизонтали и отступает на 25% сверху.</li>
+                <li>background-position: right bottom — рисунок располагается снизу справа.</li>
+            </ul>
+            <div class="example5-position1"></div>
+            <div class="example5-position2"></div>
+            <div class="example5-position3"></div>
+            <p>
+                Все эти настройки могут быть записаны в одном свойстве background, порядок следования свойств:
+            </p>
+            <p>
+                [background-color] | [background-image] | [background-repeat] | [background-attachment] | [background-position]
+            </p>
+            <p>
+                Например:
+            </p>
+            <div class="background">
+                <p>
+                    background: #000 url("my-image.jpg") no-repeat fixed left bottom;
+                </p>
+            </div>
+            <p>
+                Если какое-то свойство пропускается, то его значение установлено по умолчанию.
+            </p>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="block"></div>
+    </footer>
+</body>
+</html>
